@@ -180,7 +180,7 @@
             border-color: var(--text-gray);
         }
 
-        /* قسم إحصائيات النجاح (مضاف من عندي) */
+        /* قسم إحصائيات النجاح */
         .stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -285,7 +285,7 @@
             font-size: 0.95rem;
         }
 
-        /* قسم البكجات (العروض السعرية) */
+        /* قسم البكجات */
         .grid-packages {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -503,7 +503,7 @@
                 <a href="#packages" class="btn btn-secondary">تصفح البكجات</a>
             </div>
             
-            <!-- قسم إحصائيات النجاح (مضاف لزيادة ثقة الزوار) -->
+            <!-- قسم إحصائيات النجاح -->
             <div class="stats">
                 <div class="stat-item">
                     <h3>+150</h3>
@@ -565,7 +565,7 @@
                 </ul>
                 <a href="#contact" class="btn btn-secondary">طلب هذا البكج</a>
             </div>
-            <!-- بكج 2 (الذهبي / متميز) -->
+            <!-- بكج 2 (الذهبي) -->
             <div class="package-card featured">
                 <div class="package-badge">الأكثر طلباً 🔥</div>
                 <h3 class="package-name">البكج الذهبي (3D Premium)</h3>
@@ -605,21 +605,32 @@
                     </li>
                 </ul>
             </div>
-            <!-- فورم الإرسال -->
+            <!-- فورم الإرسال المرتبط بالإيميل مباشرة -->
             <div class="contact-form">
-                <form onsubmit="event.preventDefault(); alert('شكراً لتواصلك مع قصة! سنتواصل معك قريباً جداً.');">
+                <!-- هام جداً: في السطر التالي، استبدل gmail.com بإيميلك الحقيقي الذي تود استقبال الطلبات عليه -->
+                <form action="https://formsubmit.co/qisatealan@gmail.com" method="POST">
+                    
+                    <!-- حماية إضافية ضد رسائل السبام -->
+                    <input type="text" name="_honey" style="display:none">
+                    
+                    <!-- للتوجيه بعد نجاح الإرسال -->
+                    <input type="hidden" name="_next" value="https://formsubmit.co/thanks">
+                    
                     <div class="form-group">
                         <label class="form-label">الاسم الكريم</label>
-                        <input type="text" class="form-control" placeholder="اسمك الثنائي" required>
+                        <input type="text" name="الاسم" class="form-control" placeholder="اسمك الثنائي" required>
                     </div>
+                    
                     <div class="form-group">
                         <label class="form-label">رقم التواصل / الواتساب</label>
-                        <input type="tel" class="form-control" placeholder="3xxxxxxx" required>
+                        <input type="tel" name="الواتساب" class="form-control" placeholder="3xxxxxxx" required>
                     </div>
+                    
                     <div class="form-group">
                         <label class="form-label">تفاصيل طلبك أو البكج المختار</label>
-                        <textarea class="form-control" placeholder="اكتب لنا لمحة بسيطة عن مشروعك..."></textarea>
+                        <textarea name="التفاصيل" class="form-control" placeholder="اكتب لنا لمحة بسيطة عن مشروعك..." required></textarea>
                     </div>
+                    
                     <button type="submit" class="btn btn-primary" style="width: 100%;">إرسال الطلب الآن</button>
                 </form>
             </div>
